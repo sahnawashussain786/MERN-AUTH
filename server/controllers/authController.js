@@ -221,7 +221,7 @@ export const resetPassword = async (req, res) => {
   }
 
   try {
-    const { user } = await userModel.findOne({ email });
+    const user = await userModel.findOne({ email });
     if (!user) {
       return res.json({ success: false, message: "user not found" });
     }
